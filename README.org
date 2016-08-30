@@ -28,23 +28,23 @@ Note: you may need the protoc command line tool to be installed (have to check i
 
 Compile stuff in one terminal:
 
-```
+#+BEGIN_SRC bash
 sbt
 compile
 fastOptJS
-```
+#+END_SRC
 
 Start backend in one terminal:
 
-```
+#+BEGIN_SRC bash
 sbt "server/run backend"
-```
+#+END_SRC
 
 Start akka remote test in another terminal:
 
-```
+#+BEGIN_SRC bash
 sbt "server/run remote-client"
-```
+#+END_SRC
 
 For javascript, open http://127.0.0.1:8888 and open the developer console.
 
