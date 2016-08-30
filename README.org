@@ -1,0 +1,51 @@
+#+TITLE: Akka + ScalaPB protobuf + scalajs playground
+
+* Description
+
+A playground to learn how protobuf can be integrated in a akka (remoting) + scalajs project.
+
+** ScalaPB
+
+[[http://trueaccord.github.io/ScalaPB/][ScalaPB]] is used to generate scala classes from protobuf file.
+
+The generation is done twice, once for scalajs and once for the jvm part.
+
+** Backend server
+
+The server can be invoked with the `backend` argument to start a webserver and a akka remotely reachable system.
+
+** Akka remoting test
+
+Invoking the server with the `remote-client` argument will start an akka system which will connect to the backend and communicate with it using protobuf messages.
+
+** Scalajs test
+
+Opening a browser to http://127.0.0.1:8888 will open the javascript test Client. The Client serialize a few messages and post them to the webserver which deserialize them.
+
+* Usage
+
+Compile stuff in one terminal:
+
+```
+sbt
+compile
+fastOptJS
+```
+
+Start backend in one terminal:
+
+```
+sbt "server/run backend"
+```
+
+Start akka remote test in another terminal:
+
+```
+sbt "server/run remote-client"
+```
+
+For javascript, open http://127.0.0.1:8888 and open the developer console.
+
+* Notes
+
+- The generated case classes offer defaults to values and the mix of optional + default in the protobuf file may not generate what you would expect.

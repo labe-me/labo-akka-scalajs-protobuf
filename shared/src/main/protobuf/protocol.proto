@@ -1,0 +1,34 @@
+// syntax = "proto3";
+
+package me.labe.labo;
+
+message Person {
+  required string name = 1;
+  required int32 id = 2;
+  optional string email = 3;
+  required int64 cdate = 5;
+
+  enum PhoneType {
+    MOBILE = 0;
+    HOME = 1;
+    WORK = 2;
+  }
+
+  message PhoneNumber {
+    required string number = 1;
+    optional PhoneType type = 2 [default = HOME];
+  }
+
+  repeated PhoneNumber phone = 4;
+}
+
+message Hello {
+  // optional + default doesn't seems to work but in reality it works with getMessage
+  optional string message = 1 [default = "Hello world"];
+  // required + default do the expected in the constructor
+  required string test = 2 [default = "Bla bla"];
+  // required without a default set default value to 0...
+  required int32 value = 3;
+}
+
+message Empty {}
