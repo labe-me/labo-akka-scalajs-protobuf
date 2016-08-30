@@ -24,6 +24,8 @@ Opening a browser to http://127.0.0.1:8888 will open the javascript test Client.
 
 * Usage
 
+Note: you may need the protoc command line tool to be installed (have to check if it's a scalapb requirement or not).
+
 Compile stuff in one terminal:
 
 ```
