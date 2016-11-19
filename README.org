@@ -2,7 +2,7 @@
 
 * Description
 
-A playground to learn how protobuf can be integrated in a akka (remoting) + scalajs project.
+A playground to learn how protobuf can be integrated in an akka (remoting) + scalajs project.
 
 ** ScalaPB
 
@@ -12,7 +12,7 @@ The generation is done twice, once for scalajs and once for the jvm part.
 
 ** Backend server
 
-The server can be invoked with the `backend` argument to start a webserver and a akka remotely reachable system.
+The server can be invoked with the `backend` argument to start a webserver and an akka remotely reachable system.
 
 ** Akka remoting test
 
